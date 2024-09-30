@@ -1,4 +1,6 @@
-XXFLAGS = -std=c++2a
+CXXFLAGS = -std=c++2a
+
+all: main
 
 main: ComplexNumber.o sortComplex.o main.o
 	g++ $(CXXFLAGS) main.o ComplexNumber.o sortComplex.o -o main

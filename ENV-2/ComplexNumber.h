@@ -1,5 +1,6 @@
 #pragma once
 #include <cmath>
+#include <iostream>
 
 
 class ComplexNumber {
@@ -36,6 +37,9 @@ public:
     bool operator==(ComplexNumber& other);
 
     int abs();
+    
+    friend std::ostream& operator<<(
+        std::ostream &out, const ComplexNumber &number);
 
 private:
     int m_imaginary;

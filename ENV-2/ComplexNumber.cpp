@@ -69,4 +69,8 @@ int ComplexNumber::abs() {
     return std::sqrt(std::pow(m_real, 2) + std::pow(m_imaginary, 2));
 }
 
+std::ostream& operator<<(
+    std::ostream &out, const ComplexNumber &number) {
+    return out << number.m_real << " + " << number.m_imaginary << "i";
+}
 

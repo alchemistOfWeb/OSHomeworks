@@ -1,5 +1,5 @@
 #pragma once
+#include "ComplexNumber.h"
 
-
-void bubbleSort(int* complexArray);
+void sortComplex(ComplexNumber* complexArray, int arraySize);
 
