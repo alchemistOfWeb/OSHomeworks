@@ -1,10 +1,12 @@
 CXXFLAGS = -std=c++2a
 
-main:  main.o
-	g++ $(CXXFLAGS) main.o -o main
+all: read-file
+
+read-file: main.o
+	g++ $(CXXFLAGS) main.o -o read-file
 
 main.o: main.cpp
 	g++ $(CXXFLAGS) main.cpp -c
 
 clean:
-	rm -f *.o main
+	rm -f *.o read-file

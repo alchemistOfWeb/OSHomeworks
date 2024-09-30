@@ -3,6 +3,9 @@
 #include <stdio.h>
 #include <stdlib.h>
 
+#define BUFFER_SIZE 1024
+
+
 void readFile(char* filePath) {
     // do smth...
     int fd = open(filePath, O_RDONLY);
@@ -12,6 +15,17 @@ void readFile(char* filePath) {
     }
     
     printf("file was opened\n");
+    
+    char buffer[BUFFER_SIZE];
+    ssize_t bytes_read = read(fd, buffer, sizeof(buffer) - 1);
+
+    if (bytes_read == -1) {
+        perror("Error during reading file");
+        exit(EXIT_FAILURE);
+    }
+    
+    buffer[bytes_read] = '\0';
+    printf("\n%s\n", buffer);
     
     close(fd);
 }
