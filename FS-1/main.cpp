@@ -9,7 +9,7 @@
 void readFile(char* filePath) {
     int fd = open(filePath, O_RDONLY);
     if (fd == -1) {
-        perror("Error during creating file");
+        perror("Error during opening file");
         exit(EXIT_FAILURE);
     }
 
@@ -32,8 +32,8 @@ void readFile(char* filePath) {
 
 int main(int argc, char** argv) {
     if (argc < 2) {
-        perror("Error: No file paht provided.");
-        return 1;
+        perror("Error: No file path provided.");
+        exit(EXIT_FAILURE);
     }
 
     readFile(argv[1]);
