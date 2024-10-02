@@ -9,13 +9,14 @@
 #define INVALID_FD -1
 
 off_t getFileSize(int fd) {
-    struct stat st;
-    if (fstat(fd, &st) !=0) {
-        perror("Error during checking size of file");
-        close(fd);
-        exit(EXIT_FAILURE);
-    }
-    return st.st_size;
+    //struct stat st;
+    //if (fstat(fd, &st) !=0) {
+    //    perror("Error during checking size of file");
+    //    close(fd);
+    //    exit(EXIT_FAILURE);
+    // }
+    return lseek(fd, 0, SEEK_END);
+    // return st.st_size;
 }
 
 void secureDelete(char* source) {
