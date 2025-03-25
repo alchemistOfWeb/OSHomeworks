@@ -1,14 +1,14 @@
 CXX = g++
 CXXFLAGS = -std=c++2a -pthread -Wall -Wextra
-TARGET = philosophers
+TARGETS = client
 
-all: $(TARGET)
+all: $(TARGETS)
 
-$(TARGET): philosophers.o
-	$(CXX) $(CXXFLAGS) -o $(TARGET) philosophers.o -lrt
+client: client.o
+	$(CXX) $(CXXFLAGS) -o client client.o
 
-philosophers.o: philosophers.cpp
-	$(CXX) $(CXXFLAGS) -c philosophers.cpp -o philosophers.o
+client.o: client.cpp
+	$(CXX) $(CXXFLAGS) -c client.cpp -o client.o
 
-clean: 
-	rm -f *.o $(TARGET)
+clean:
+	rm -f *.o $(TARGETS) httpforever.html
