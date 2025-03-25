@@ -1,4 +1,4 @@
-CXXFLAGS = -std=c++2a
+CXXFLAGS = -std=c++3a
 
 all: read-file
 
